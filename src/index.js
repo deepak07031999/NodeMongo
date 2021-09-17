@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
-mongoose.connect('mongodb://localhost:27017/node', { useNewUrlParser: true, useUnifiedTopology: true },(err => {
+mongoose.connect('mongodb://Username:password@HOSTNAME:NODEPORT', { useNewUrlParser: true, useUnifiedTopology: true },(err => {
     if(err)console.log(err);
     else console.log("success")
 }))
