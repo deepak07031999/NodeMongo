@@ -66,15 +66,14 @@ To establish a connection to a database, we need to create a MongoClient instanc
 
 To validate, login to the container
 ```
-[root@p1213-bastion cecuser]# oc get po
-NAME                                                          READY   STATUS    RESTARTS   AGE
-test-ibm-mongodb-enterprise-helm-deployment-d6c8b784c-zlxkh   1/1     Running   0          111m
-
-[root@p1213-bastion cecuser]# oc rsh test-ibm-mongodb-enterprise-helm-deployment-d6c8b784c-zlxkh
+[cecuser@p1262-bastion ~]$ oc get po
+NAME                                                           READY   STATUS     RESTARTS   AGE
+test-ibm-mongodb-enterprise-helm-deployment-7c694b99f8-qtlsl   1/1     Running    0          3d19h
+[cecuser@p1262-bastion ~]$ oc rsh test-ibm-mongodb-enterprise-helm-deployment-7c694b99f8-qtlsl
 sh-4.4$ mongo -u myUserAdmin -p password
 MongoDB shell version v4.4.4
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("912c934e-bacd-4165-a2b8-f486a2c15019") }
+Implicit session: session { "id" : UUID("39a3eac1-cfc4-4a1d-a7f9-94989bc4ef69") }
 MongoDB server version: 4.4.4
 Welcome to the MongoDB shell.
 For interactive help, type "help".
@@ -84,21 +83,21 @@ Questions? Try the MongoDB Developer Community Forums
         https://community.mongodb.com
 ---
 The server generated these startup warnings when booting:
-        2021-05-18T04:59:30.390+00:00: Soft rlimits too low
-        2021-05-18T04:59:30.390+00:00:         lockedMemoryBytes: 65536
-        2021-05-18T04:59:30.390+00:00:         minLockedMemoryBytes: 1048576
+        2021-09-13T13:27:06.073+00:00: Soft rlimits too low
+        2021-09-13T13:27:06.073+00:00:         lockedMemoryBytes: 65536
+        2021-09-13T13:27:06.073+00:00:         minLockedMemoryBytes: 1048576
 ---
 MongoDB Enterprise > show dbs
-admin       0.000GB
-business    0.000GB
-config      0.000GB
-local       0.000GB
-test        0.000GB
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+newdb   0.000GB
+test    0.000GB
 MongoDB Enterprise > use test
 switched to db test
 MongoDB Enterprise > show collections
 quotes
-MongoDB Enterprise > db.reviews.find().count()
+MongoDB Enterprise > db.quotes.find().count()
 0
 MongoDB Enterprise >
 ```
