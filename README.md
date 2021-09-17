@@ -118,18 +118,27 @@ To read the data from collection
 
 ```
 [cecuser@p1262-bastion ~]$ curl -X GET http://localhost:3000/quote
+```
+output:
+```
 [{"_id":"6144584d2919d822bff3c18d","id":"1","quote":"value1","__v":0},{"_id":"614458a42919d822bff3c18f","id":"2","quote":"Here we go","__v":0}]
 
 ```
 To Update the data from collection using id
 ```
 [cecuser@p1262-bastion ~]$ curl -X PUT -H "Content-Type: application/json" -d "{\"id\":\"1\", \"quote\": \"changed the quote\" }" http://localhost:3000/quote
+```
+output
+```
 {"_id":"614448b90939c41cb57d723b","id":"1","quote":"changed the quote","__v":0}
 ```
 
 To delete the data from collection using id
 ```
 [cecuser@p1262-bastion ~]$ curl -X DELETE -H "Content-Type: application/json" -d "{ \"id\": \"1\" }" http://localhost:3000/quote
+```
+output
+```
 {"ok":"true"}
 
 ```
