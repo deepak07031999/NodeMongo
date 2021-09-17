@@ -105,11 +105,16 @@ MongoDB Enterprise >
 To Insert the data to collection 
 ```
 [cecuser@p1262-bastion ~]$ curl -X POST -H "Content-Type: application/json" -d "{\"id\":\"1\", \"quote\": \"value1\" }" http://localhost:3000/quote
+```
+output:
+```
 {"_id":"6144584d2919d822bff3c18d","id":"1","quote":"value1","__v":0}
-
 ```
 ```
 [cecuser@p1262-bastion ~]$ curl -X POST -H "Content-Type: application/json" -d "{\"id\":\"2\", \"quote\": \"Here we go\" }" http://localhost:3000/quote
+```
+output :
+```
 {"_id":"614458a42919d822bff3c18f","id":"2","quote":"Here we go","__v":0}[
 
 ```
