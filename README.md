@@ -125,7 +125,8 @@ To Update the data from collection using id
 ```
 [cecuser@p1262-bastion ~]$ curl -X PUT -H "Content-Type: application/json" -d "{\"id\":\"1\", \"quote\": \"changed the quote\" }" http://localhost:3000/quote
 {"_id":"614448b90939c41cb57d723b","id":"1","quote":"changed the quote","__v":0}
-``
+```
+
 To delete the data from collection using id
 ```
 [cecuser@p1262-bastion ~]$ curl -X DELETE -H "Content-Type: application/json" -d "{ \"id\": \"1\" }" http://localhost:3000/quote
