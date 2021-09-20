@@ -13,11 +13,11 @@ After completion of helm installation, validate if chart got installed successfu
 ```
 [root@p1213-bastion cecuser]# helm ls
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /root/.kube/config
-NAME                                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                APP VERSION
-test                                    jas             1               2021-05-18 00:59:07.383811905 -0400 EDT deployed        ibm-mongodb-enterprise-helm-0.1.0    4.4.0
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                   APP VERSION
+test    ibm             1               2021-09-13 09:26:19.205009817 -0400 EDT deployed        ibm-mongodb-enterprise-helm-0.2.0       4.4.0
 [root@p1213-bastion cecuser]# oc get po
-NAME                                                          READY   STATUS    RESTARTS   AGE
-test-ibm-mongodb-enterprise-helm-deployment-d6c8b784c-zlxkh   1/1     Running   0          111m
+NAME                                                           READY   STATUS     RESTARTS   AGE
+test-ibm-mongodb-enterprise-helm-deployment-7c694b99f8-qtlsl   1/1     Running    0          6d23h
 [root@p1213-bastion cecuser]#
 
 ```
@@ -30,9 +30,10 @@ service/test-ibm exposed
 NAME                                STATUS   ROLES           AGE   VERSION
 p1213-master.p1213.cecc.ihost.com   Ready    master,worker   13d   v1.19.0+a5a0987
 [root@p1213-bastion templates]# oc get svc
-NAME                                       TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                                                     AGE
-test-ibm                                   NodePort       172.30.22.77     <none>        27017:31466/TCP                                                                                             14s
-test-ibm-mongodb-enterprise-helm-service   ClusterIP      172.30.78.82     <none>        27017/TCP                                                                                                   85m
+NAME                                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)           AGE
+test-ibm                                   NodePort    172.30.169.200   <none>        27017:32046/TCP   3d22h
+test-ibm-mongodb-enterprise-helm-service   ClusterIP   172.30.152.204   <none>        27017/TCP         6d23h
+
 ```
 
 
